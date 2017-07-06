@@ -123,7 +123,7 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
     }
     
     // UITableView support
-    if ([self isKindOfClass:[UITableView class]]) {
+    if ([self isKindOfClass:[UITableView class]] || [NSStringFromClass([self class]) isEqualToString:@"ASTableView"]) {
         
         UITableView *tableView = (UITableView *)self;
         id <UITableViewDataSource> dataSource = tableView.dataSource;
@@ -141,7 +141,7 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
         }
     }
     // UICollectionView support
-    else if ([self isKindOfClass:[UICollectionView class]]) {
+    else if ([self isKindOfClass:[UICollectionView class]] || [NSStringFromClass([self class]) isEqualToString:@"ASCollectionView"]) {
         
         UICollectionView *collectionView = (UICollectionView *)self;
         id <UICollectionViewDataSource> dataSource = collectionView.dataSource;
